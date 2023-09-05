@@ -1,0 +1,14 @@
+<!-- instructor-create.component.html -->
+<div>
+    <h2>Create Instructor</h2>
+    <form (submit)="createInstructor(instructorForm)">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="instructorForm.name" required>
+        </div>
+        <!-- Add more input fields for other instructor properties -->
+        <button type="submit">Create Instructor</button>
+    </form>
+    <!-- Add a link back to the instructor list page -->
+    <a routerLink="/instructors">Back to List</a>
+</div>

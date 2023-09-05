@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Instructors</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let instructor of instructors">
+          <td>{{ instructor.name }}</td>
+          <td>{{ instructor.gender }}</td>
+          <td>{{ instructor.date_of_birth }}</td>
+          <td>{{ instructor.department }}</td>
+          <td>{{ instructor.email }}</td>
+          <td>{{ instructor.contact_number }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+        <li *ngFor="let instructor of instructors">
+          {{ instructor.name }} <!-- Display other properties as needed -->
+          <a [routerLink]="['/instructors', instructor.id]">View Details</a>
+          <a [routerLink]="['/instructors/edit', instructor.id]">Edit</a>
+        </li>
+      </ul>
+      <!-- Add a link to create a new instructor -->
+      <a routerLink="/instructors/create">Create Instructor</a>
+  </div>
+  

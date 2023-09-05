@@ -1,0 +1,14 @@
+<!-- instructor-edit.component.html -->
+<div>
+    <h2>Edit Instructor</h2>
+    <form (submit)="updateInstructor()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="instructor.name" required>
+        </div>
+        <!-- Add more input fields for other instructor properties -->
+        <button type="submit">Update Instructor</button>
+    </form>
+    <!-- Add a link back to the instructor detail page -->
+    <a [routerLink]="['/instructors', instructor.id]">Cancel</a>
+</div>
