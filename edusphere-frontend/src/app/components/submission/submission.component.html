@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Submissions</h1>
+    
+    <!-- Form for creating/editing a submission -->
+    <form *ngIf="selectedSubmission; else newSubmissionForm" (submit)="updateSubmission()">
+      <h2>Edit Submission</h2>
+      <label for="submissionDate">Submission Date:</label>
+      <input type="date" id="submissionDate" [(ngModel)]="selectedSubmission.submittedDate" required>
+      
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="selectedSubmission.status" required>
+        <option value="Submitted">Submitted</option>
+        <option value="Late">Late</option>
+        <option value="Graded">Graded</option>
+      </select>
+      
+      <label for="remarks">Remarks:</label>
+      <textarea id="remarks" [(ngModel)]="selectedSubmission.remarks"></textarea>
+      
+      <!-- Add more fields as needed -->
+      
+      <button type="submit">Update Submission</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  
+    <ng-template #newSubmissionForm>
+      <h2>Add New Submission</h2>
+      <label for="submissionDate">Submission Date:</label>
+      <input type="date" id="submissionDate" [(ngModel)]="newSubmission.submittedDate" required>
+      
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="newSubmission.status" required>
+        <option value="Submitted">Submitted</option>
+        <option value="Late">Late</option>
+        <option value="Graded">Graded</option>
+      </select>
+      
+      <label for="remarks">Remarks:</label>
+      <textarea id="remarks" [(ngModel)]="newSubmission.remarks"></textarea>
+      
+      <!-- Add more fields as needed -->
+      
+      <button type="submit" (click)="createSubmission()">Add Submission</button>
+    </ng-template>
+  
+    <!-- List of submissions -->
+    <ul>
+      <li *ngFor="let submission of submissions">
+        Submission Date: {{ submission.submittedDate | date }} - Status: {{ submission.status }}
+        <!-- Display additional submission information as needed -->
+        <button (click)="editSubmission(submission)">Edit</button>
+        <button (click)="deleteSubmission(submission.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

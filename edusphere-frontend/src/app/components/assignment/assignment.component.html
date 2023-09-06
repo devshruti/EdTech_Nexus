@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>Assignments</h1>
+
+  <!-- Form for creating/editing an assignment -->
+  <form *ngIf="selectedAssignment; else newAssignmentForm" (submit)="updateAssignment(selectedAssignment.id, selectedAssignment)">
+    <h2>Edit Assignment</h2>
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="selectedAssignment.title" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="selectedAssignment.description"></textarea>
+
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" [(ngModel)]="selectedAssignment.dueDate" required>
+
+    <!-- Add more fields as needed -->
+
+    <button type="submit">Update Assignment</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+  <ng-template #newAssignmentForm>
+    <h2>Add New Assignment</h2>
+    <label for="newTitle">Title:</label>
+    <input type="text" id="newTitle" [(ngModel)]="newAssignment.title" required>
+
+    <label for="newDescription">Description:</label>
+    <textarea id="newDescription" [(ngModel)]="newAssignment.description"></textarea>
+
+    <label for="newDueDate">Due Date:</label>
+    <input type="date" id="newDueDate" [(ngModel)]="newAssignment.dueDate" required>
+
+    <!-- Add more fields as needed -->
+
+    <button type="submit" (click)="createAssignment()">Add Assignment</button>
+  </ng-template>
+
+  <!-- List of assignments -->
+  <ul>
+    <li *ngFor="let assignment of assignments">
+      <div>
+        <span class="label">Title:</span> {{ assignment.title }}<br>
+        <span class="label">Due Date:</span> {{ assignment.dueDate | date }}
+        <!-- Display additional assignment information as needed -->
+      </div>
+      <div>
+        <button (click)="editAssignment(assignment)">Edit</button>
+        <button (click)="deleteAssignment(assignment.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

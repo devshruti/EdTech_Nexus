@@ -1,20 +1,25 @@
-import { NgModule } from '@angular/core';
+// Import the components you want to route to
+import { StudentComponent } from './components/student/student.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
+import { CourseComponent } from './components/course/course.component';
+import { EnrollmentComponent } from './components/enrollment/enrollment.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
+import { SubmissionComponent } from './components/submission/submission.component';
 import { RouterModule, Routes } from '@angular/router';
-import { InstructorListComponent } from './instructor-list/instructor-list.component';
-import { InstructorDetailComponent } from './instructor-detail/instructor-detail.component';
-import { InstructorCreateComponent } from './instructor-create/instructor-create.component';
-import { InstructorEditComponent } from './instructor-edit/instructor-edit.component';
+import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/instructors', pathMatch: 'full' },
-  { path: 'instructors', component: InstructorListComponent },
-  { path: 'instructors/:id', component: InstructorDetailComponent },
-  { path: 'instructors/create', component: InstructorCreateComponent },
-  { path: 'instructors/edit/:id', component: InstructorEditComponent },
+  { path: 'students', component: StudentComponent },
+  { path: 'instructors', component: InstructorComponent },
+  { path: 'courses', component: CourseComponent },
+  { path: 'enrollments', component: EnrollmentComponent },
+  { path: 'assignments', component: AssignmentComponent },
+  { path: 'submissions', component: SubmissionComponent },
+  // Define routes for other components
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Enrollments</h1>
+    
+    <!-- Form for creating/editing an enrollment -->
+    <form *ngIf="selectedEnrollment; else newEnrollmentForm" (submit)="updateEnrollment()">
+      <h2>Edit Enrollment</h2>
+      <label for="studentId">Student ID:</label>
+      <input type="text" id="studentId" [(ngModel)]="selectedEnrollment.studentId" required>
+      
+      <label for="courseId">Course ID:</label>
+      <input type="text" id="courseId" [(ngModel)]="selectedEnrollment.courseId" required>
+      
+      <!-- Add more fields as needed -->
+      
+      <button type="submit">Update Enrollment</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  
+    <ng-template #newEnrollmentForm>
+      <h2>Add New Enrollment</h2>
+      <label for="studentId">Student ID:</label>
+      <input type="text" id="studentId" [(ngModel)]="newEnrollment.studentId" required>
+      
+      <label for="courseId">Course ID:</label>
+      <input type="text" id="courseId" [(ngModel)]="newEnrollment.courseId" required>
+      
+      <!-- Add more fields as needed -->
+      
+      <button type="submit" (click)="createEnrollment()">Add Enrollment</button>
+    </ng-template>
+  
+    <!-- List of enrollments -->
+    <ul>
+      <li *ngFor="let enrollment of enrollments">
+        Student ID: {{ enrollment.studentId }} - Course ID: {{ enrollment.courseId }}
+        <!-- Display additional enrollment information as needed -->
+        <button (click)="editEnrollment(enrollment)">Edit</button>
+        <button (click)="deleteEnrollment(enrollment.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

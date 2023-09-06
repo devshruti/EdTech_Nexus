@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Instructors</h1>
+    
+    <!-- Form for creating a new instructor -->
+    <form (submit)="createInstructor(newInstructor)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="newInstructor.name" required>
+      
+      <label for="department">Department:</label>
+      <input type="text" id="department" [(ngModel)]="newInstructor.department" required>
+      
+      <button type="submit">Add Instructor</button>
+    </form>
+    
+    <!-- List of instructors -->
+    <ul>
+      <li *ngFor="let instructor of instructors">
+        {{ instructor.name }} - {{ instructor.department }}
+        <button (click)="editInstructor(instructor)">Edit</button>
+        <button (click)="deleteInstructor(instructor.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

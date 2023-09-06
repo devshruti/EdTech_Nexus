@@ -1,0 +1,25 @@
+<div>
+    <h1>Departments</h1>
+    <button (click)="createNewDepartment()">Create New Department</button>
+    <ul>
+      <li *ngFor="let department of departments">
+        <a (click)="selectDepartment(department)">{{ department.name }}</a>
+        <button (click)="deleteDepartment(department.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="selectedDepartment || isNewDepartment">
+    <h2>{{ isNewDepartment ? 'Create New Department' : 'Edit Department' }}</h2>
+    <form (submit)="saveDepartment()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="departmentForm.name" required>
+      <br>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="departmentForm.description"></textarea>
+      <br>
+      <button type="submit">Save</button>
+      <button (click)="selectedDepartment = null; isNewDepartment = false;">Cancel</button>
+    </form>
+  </div>
+  

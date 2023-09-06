@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Courses</h1>
+    
+    <!-- Form for creating/editing a course -->
+    <form *ngIf="selectedCourse; else newCourseForm" (submit)="updateCourse()">
+      <h2>Edit Course</h2>
+      <label for="courseCode">Course Code:</label>
+      <input type="text" id="courseCode" [(ngModel)]="selectedCourse.courseCode" required>
+      
+      <label for="courseName">Course Name:</label>
+      <input type="text" id="courseName" [(ngModel)]="selectedCourse.courseName" required>
+      
+      <label for="department">Department:</label>
+      <input type="text" id="department" [(ngModel)]="selectedCourse.department" required>
+      
+      <!-- <label for="credits">Credits:</label>
+      <input type="number" id="credits" [(ngModel)]="selectedCourse.credits" required>
+       -->
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="selectedCourse.description"></textarea>
+      
+      <button type="submit">Update Course</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  
+    <ng-template #newCourseForm>
+      <h2>Add New Course</h2>
+      <label for="courseCode">Course Code:</label>
+      <input type="text" id="courseCode" [(ngModel)]="newCourse.courseCode" required>
+      
+      <label for="courseName">Course Name:</label>
+      <input type="text" id="courseName" [(ngModel)]="newCourse.courseName" required>
+      
+      <label for="department">Department:</label>
+      <input type="text" id="department" [(ngModel)]="newCourse.department" required>
+      
+      <!-- <label for="credits">Credits:</label>
+      <input type="number" id="credits" [(ngModel)]="newCourse.credits" required>
+       -->
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="newCourse.description"></textarea>
+      
+      <button type="submit" (click)="createCourse()">Add Course</button>
+    </ng-template>
+  
+    <!-- List of courses -->
+    <ul>
+      <li *ngFor="let course of courses">
+        {{ course.courseCode }} - {{ course.courseName }} - {{ course.department }}
+        <button (click)="editCourse(course)">Edit</button>
+        <button (click)="deleteCourse(course.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
