@@ -271,6 +271,172 @@
     z-index: -10;
     width: 1920px;
   }
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Light background color */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Increased maximum width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header (Hero) styles */
+.hero {
+    background-image: url('hero-background.jpg'); /* Add your hero image */
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 800px; /* Adjusted max width for better readability */
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3.5rem; /* Increased font size for headings */
+    margin-bottom: 20px;
+    font-weight: 700; /* Added font weight */
+}
+
+p {
+    font-size: 1.4rem; /* Increased font size for paragraphs */
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px; /* Increased padding for buttons */
+    font-size: 1.6rem; /* Increased font size for buttons */
+    background-color: #1976d2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #125699;
+}
+
+/* About section styles */
+.about-section {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Feature section styles */
+.features-section {
+    background-color: #f6f6f6; /* Slightly darker background color */
+    padding: 80px 0;
+}
+
+.feature {
+    text-align: center;
+    margin: 40px; /* Increased margin between features */
+}
+
+.feature img {
+    max-width: 100px; /* Adjusted max-width for feature images */
+    height: auto;
+}
+
+.feature h3 {
+    font-size: 2rem; /* Increased font size for feature headings */
+    margin-top: 20px;
+}
+
+.feature p {
+    font-size: 1.4rem; /* Increased font size for feature descriptions */
+}
+
+/* Contact section styles */
+.contact-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%;
+    padding: 16px; /* Increased padding for form elements */
+    margin-bottom: 24px; /* Increased margin between form elements */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.4rem; /* Increased font size for form elements */
+}
+
+.contact-section button {
+    display: inline-block;
+    padding: 16px 32px; /* Increased padding for form button */
+    font-size: 1.6rem; /* Increased font size for form button */
+    background-color: #1976d2;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-section button:hover {
+    background-color: #125699;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0; /* Increased padding for footer */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 20px 10px; /* Adjusted container padding for smaller screens */
+    }
+
+    .hero-content {
+        max-width: 100%; /* Full width for hero content */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reduced font size for headings on smaller screens */
+    }
+
+    p {
+        font-size: 1.2rem; /* Reduced font size for paragraphs on smaller screens */
+    }
+
+    .cta-button {
+        font-size: 1.4rem; /* Reduced font size for buttons on smaller screens */
+    }
+
+    .feature {
+        margin: 20px; /* Reduced margin between features on smaller screens */
+    }
+}
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -322,6 +488,58 @@
       <!-- Add more navigation links as needed -->
     </ul>
   </nav>
+  <header class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Your Website</h1>
+        <p>Your Catchy Slogan or Tagline Goes Here</p>
+        <a href="#about" class="cta-button">Learn More</a>
+    </div>
+</header>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget elit libero, id eleifend mi. Maecenas blandit aliquet justo, ac efficitur dui sodales at.</p>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="feature">
+            <img src="icon-1.png" alt="Feature Icon">
+            <h3>Feature 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="feature">
+            <img src="icon-2.png" alt="Feature Icon">
+            <h3>Feature 2</h3>
+            <p>Nulla eget elit libero, id eleifend mi.</p>
+        </div>
+        <div class="feature">
+            <img src="icon-3.png" alt="Feature Icon">
+            <h3>Feature 3</h3>
+            <p>Maecenas blandit aliquet justo, ac efficitur dui sodales at.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button class="cta-button">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2023 Your Company. All Rights Reserved.</p>
+    </div>
+</footer>
   <!-- Use router-outlet to display components -->
   <router-outlet></router-outlet>
 </div>

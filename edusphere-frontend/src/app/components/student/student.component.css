@@ -1,0 +1,63 @@
+/* Apply styles to the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Style the heading */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style the student list */
+.student-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.student-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style student information */
+.student-info {
+    flex: 1;
+}
+
+.student-info h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Style student actions (edit and delete buttons) */
+.student-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
+.student-actions button:hover {
+    background-color: #0056b3;
+}

@@ -4,9 +4,10 @@ export class Student {
     name!: string;
     gender!: string;
     dateOfBirth!: Date;
-    major!: string;
+    department!: string;
     email!: string;
-    contactNumber!: string; // Non-null assertion operator
+    contactNumber!: string; 
+    rollNumber!: number;// Non-null assertion operator
   
     constructor() {
       // Constructor logic if needed
